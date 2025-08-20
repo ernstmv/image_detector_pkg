@@ -13,10 +13,19 @@ def generate_launch_description():
             )
 
     return LaunchDescription(
-            Node(
+            [
+                Node(
                 package='image_detector_pkg',
                 executable='image_detector_node',
                 name='image_detector_node',
                 parameters=[config_file]
-                )
+                ),
+
+                Node(
+                package='image_detector_pkg',
+                executable='projection_node',
+                name='projection_node',
+                parameters=[config_file]
+                ),
+            ]
             )

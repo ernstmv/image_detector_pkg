@@ -33,7 +33,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'image_detector_node = image_detector_pkg.image_detector_node:main'
+            'image_detector_node = image_detector_pkg.image_detector_node:main',
+            'projection_node = image_detector_pkg.projection_node:main'
         ],
     },
 )
