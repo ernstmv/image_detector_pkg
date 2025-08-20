@@ -1,0 +1,10 @@
+image_detector_node:
+  ros__parameters:
+    input_topic: "/camera/image_raw"
+    output_image_topic: "/yolo/image"
+    human_detections_topic: "/yolo/human_detections_2d"
+    car_detections_topic: "/yolo/car_detections_2d"
+
+    YOLO_model: "yolov5su.pt"
+    YOLO_threshold: 0.5
+    device: "cuda"
