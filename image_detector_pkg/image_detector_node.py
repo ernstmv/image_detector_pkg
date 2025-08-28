@@ -7,7 +7,7 @@ from time import time
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
-from vision_msgs.msg import Detection2D, Detection2DArray, ObjectHypothesis, BoundingBox2D
+from vision_msgs.msg import Detection2D, Detection2DArray, ObjectHypothesisWithPose, BoundingBox2D
 
 from ultralytics import YOLO
 from cv_bridge import CvBridge
@@ -122,13 +122,13 @@ class ImageDetectorNode(Node):
             detection.bbox = bbox
 
             # Define object hypothesis
-            hypo = ObjectHypothesis()
+            hypo = ObjectHypothesisWithPose()
             hypo.hypothesis.class_id = str(class_id)
             hypo.hypothesis.score = float(conf)
             detection.results.append(hypo)
 
             # Classify detection
-            detectionss_msg.detections.append(detection)
+            detections_msg.detections.append(detection)
 
         return detections_msg
 
