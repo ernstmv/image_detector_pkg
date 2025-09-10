@@ -1,9 +1,10 @@
 #!/bin/bash
 
-cd $HOME/ros2ws
+cd $HOME/ros2_ws
 
 echo "[1/3] Building package\n"
 colcon build --packages-select image_detector_pkg 
+
 if [  $? -eq 1 ]; then
 	echo "ERROR: Error building package. Please check"
 	exit
