@@ -109,6 +109,9 @@ class ImageDetectorNode(Node):
         detections_msg = Detection2DArray()
         detections_msg.header = header
 
+        if detections.shape[0] == 0:
+            return detections_msg
+
         for det in detections:
             x1, y1, x2, y2, conf, class_id = det
             detection = Detection2D()

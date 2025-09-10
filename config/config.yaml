@@ -1,7 +1,7 @@
 image_detector_node:
   ros__parameters:
-    input_topic: "/camera/image_raw"
-    human_detections_topic: "/yolo/detections"
+    input_topic: "/camera/image_raw"      # /sensor_msgs/msg/Image
+    detections_topic: "/yolo/detections"  # /vision_msgs/msg/Detection2DArray
 
     YOLO_model: "yolov5su.pt"
     YOLO_threshold: 0.5
@@ -9,6 +9,6 @@ image_detector_node:
 
 projection_node:
   ros__parameters:
-    input_image_topic: "/camera/image_raw"
     detections_topic: "/yolo/detections"
+    input_image_topic: "/camera/image_raw"
     output_image_topic: "/yolo/image"
