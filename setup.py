@@ -28,7 +28,7 @@ setup(
     zip_safe=True,
     maintainer='ernstmv',
     maintainer_email='ernestoroque777@gmail.com',
-    description='The implementation of a 2d detector using yolo',
+    description='The implementation of a 2d detector for humans using a YOLO model.',
     license='MIT',
     tests_require=['pytest'],
     entry_points={

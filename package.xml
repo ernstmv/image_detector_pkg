@@ -3,7 +3,7 @@
 <package format="3">
   <name>image_detector_pkg</name>
   <version>0.0.1</version>
-  <description>The implementation of a 2d detector using a YOLO</description>
+  <description>The implementation of a 2d detector for humans using a YOLO model.</description>
   <maintainer email="ernestoroque777@gmail.com">ernstmv</maintainer>
   <license>MIT</license>
 
